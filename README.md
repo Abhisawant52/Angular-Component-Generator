@@ -1,1 +1,1 @@
-# Angular-Component-Generator
+# Angular-Form-Component-Generator
