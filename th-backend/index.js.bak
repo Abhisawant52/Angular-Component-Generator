@@ -1,0 +1,50 @@
+const express = require('express')
+const app = express()
+var cors = require('cors')
+const port = 3000
+
+app.use(cors())
+
+app.get('/Form1', (req, res) => {
+	const 
+		Form: [
+			{
+				type: 'text',
+				field_name: 'username',
+				id:'username',
+				isRequired: true,
+				returnValue: 'username',
+			},
+			{
+				type: 'text',
+				field_name: 'user-age',
+				id:'user-age',
+				isRequired: true,
+				returnValue: 'user-age',
+			},
+		],
+		
+	
+	res.send(data)
+})
+app.get('/Form2', (req, res) => {
+	const data = {
+		Form: [
+			{
+				type: 'text',
+				field_name: 'name',
+				isRequired: true,
+				returnValue: 'name',
+			},
+			
+		],
+		Result: {
+			name: '',
+			
+		},
+	}
+	res.send(data)
+})
+app.listen(port, () => {
+	console.log(`Example app listening on port ${port}`)
+})

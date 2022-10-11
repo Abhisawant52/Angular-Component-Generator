@@ -1,0 +1,6 @@
+<section class="form"><form (ngSubmit)="onSubmit(form)" #form="ngForm"><article class="form-group"><!--- Field type text and Date ---><div> <label for=Offer Code >Offer Code</label>
+<input class="form-control" ngModel type=text id=Offer-Code name=Offer-Code /></div><!--- Field type text and Date ---><div> <label for=Offer Name >Offer Name</label>
+<input class="form-control" ngModel type=text id=Offer-name name=Offer-name /></div><!--- Field type text and Date ---><div> <label for=Start Date >Start Date</label>
+<input class="form-control" ngModel type=date id=Start-Date name=Start-Date /></div><!--- Text-Area Field ---><div> <label for=Terms of usages >Terms of usages</label>
+<textarea name=Terms-of-usages id=Terms-of-usages rows="4" cols="50" class="form-control" ngModel></textarea></div><!--- Field type dropdown ---><div> <label for=Store Code >Store Code</label>
+<select name= Store-Code id= Store-Code class="form-control" ngModel><option value=Store-Code1 >Store-Code1</option><option value=Store-Code2 >Store-Code2</option></select></div></article><button type="submit">Add</button></form></section>

@@ -1,0 +1,56 @@
+<section>
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <article class="form-group" *ngFor="let field of Fields">
+      <!--Text and Date Field -->
+      <div *ngIf="field.type == 'text' || field.type == 'date'">
+        <label [for]="field.id">{{ field.field_name }}</label>
+        <input
+          [type]="field.type"
+          [id]="field.id"
+          [name]="field.id"
+          class="form-control"
+          ngModel
+        />
+      </div>
+      <!--Radio Button Field -->
+      <div *ngIf="field.type == 'radio'">
+        <label [for]="field.id">{{ field.field_name }}</label>
+        <div class="radio" *ngFor="let value of field.values">
+          <label
+            ><input
+              type="radio"
+              [name]="field.id"
+              class="form-control"
+              ngModel
+              [value]="value"
+            />
+            {{ value }}</label
+          >
+        </div>
+      </div>
+      <!--Dropdown Field -->
+      <div *ngIf="field.type == 'dropdown'">
+        <label [for]="field.id">{{ field.field_name }}</label>
+        <select [name]="field.id" [id]="field.id" class="form-control" ngModel>
+          <option [value]="value" *ngFor="let value of field.values">
+            {{ value }}
+          </option>
+        </select>
+      </div>
+      <!--Text-Area Field -->
+      <div *ngIf="field.type == 'Text-Area'">
+        <label [for]="field.id">{{ field.field_name }}</label>
+        <textarea
+          [id]="field.id"
+          [name]="field.id"
+          rows="4"
+          cols="50"
+          class="form-control"
+          ngModel
+        >
+        </textarea>
+      </div>
+    </article>
+    <button type="submit">Add</button>
+  </form>
+</section>
